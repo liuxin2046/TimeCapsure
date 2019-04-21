@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-card": "../../components/card/index",
+    "i-icon": "../../components/icon/index",
+    "i-spin": "../../components/spin/index",
+    "i-toast": "../../components/toast/index"
+  },
+  "enablePullDownRefresh": true
+}

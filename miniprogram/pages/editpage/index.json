@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-icon": "../../components/icon/index",
+    "i-button": "../../components/button/index",
+    "i-spin": "../../components/spin/index",
+    "i-toast": "../../components/toast/index"
+  }
+}

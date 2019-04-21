@@ -1,0 +1,27 @@
+<!-- pages/friends/index.wxml -->
+<view>
+  <view class="nav">
+    <i-tabs current="{{ current }}" bindchange="handleChange">
+      <i-tab key="tab1" title="已关注" count="{{friendsList.follow.length}}"></i-tab>
+      <i-tab key="tab2" title="圈子" count="{{friendsList.allUsers.length}}"></i-tab>
+      <!-- <i-tab key="tab3" title="选项3" dot></i-tab> -->
+    </i-tabs>
+  </view>
+  <!-- 好友列表 -->
+  <view class="friends-list">
+    <scroll-view scroll-y style="height:400px">
+      <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin>
+      <template name="tab1">
+        <block wx:for="{{friendsList.follow}}" wx:key="{{index}}">
+          <i-card title="{{item.nickName}}" extra="查看" full thumb="{{item.avatarUrl}}" data-id="{{item.followId}}" data-url="{{item.avatarUrl}}" data-name="{{item.nickName}}" data-isfollow="1" bind:tap="friendPage"></i-card>
+        </block>
+      </template>
+      <template name="tab2">
+        <block wx:for="{{friendsList.allUsers}}" wx:key="{{index}}">
+          <i-card title="{{item.nickName}}" extra="查看" full thumb="{{item.avatarUrl}}" data-id="{{item._id}}" data-url="{{item.avatarUrl}}" data-name="{{item.nickName}}" bind:tap="friendPage"></i-card>
+        </block>
+      </template>
+      <template is="{{ current }}" data="{{friendsList}}"></template>
+    </scroll-view>
+  </view>
+</view>

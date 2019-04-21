@@ -1,0 +1,50 @@
+.my-background {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.my-info {
+  position: absolute;
+  left: 10px;
+  top: 100px;
+  z-index: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow:hidden;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white;
+}
+.my-row {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  z-index: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding-left: 10px;
+
+}
+.sign-in {
+  background-color: #ed3f14;
+  color: #fff;
+
+}
+.button-hover { opacity: 0.7;}
+.userinfo-avatar {
+  position: absolute;
+  left: 10px;
+  top: 100px;
+  z-index: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}

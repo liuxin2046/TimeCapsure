@@ -1,0 +1,47 @@
+<!-- pages/editpage/index.wxml -->
+<!-- <import src="../../components/wxParse/wxParse.wxml"></import>
+<view>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view> -->
+<view class="record-tool" wx:if="{{visible}}">
+  <i-icon type="{{recordStatus ? 'suspend':'play'}}" size="28" bind:tap='recordControl'/>
+  <!-- <i-icon type="suspend" /> -->
+  <text class="record-time">{{seconds ? seconds:'0'}}秒</text>
+  <view class="record-line" style="background-image:url('{{lineGif}}')">
+    <!-- <image src="../../static/images/editpage/ripple.gif" style="width:100%;height:1px"/> -->
+  </view>
+  <text class="record-end" bind:tap="recordEnd">结束</text>
+</view>
+<view class="save">
+  <i-button type="primary" inline bind:tap="save">保存</i-button>
+</view>
+<view class="article">
+  <view class="record-file" wx:if="{{visible2}}">
+    <audio
+      poster="{{poster}}"
+      name="{{name}}"
+      author="{{author}}"
+      src="{{recordPath}}"
+      id="myAudio"
+      controls
+    ></audio>
+  </view>
+  <textarea class="words" value="{{text}}" bindinput="handleInput" auto-height maxlength='-1' placeholder="{{placeholderText}}">
+  </textarea>
+  <view class='picture'>
+    <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin>
+    <image src="{{picPath}}" mode="aspectFill"/>
+  <!-- <text>fileID</text> -->
+    <!-- <image src="{{fileId}}" mode="aspectFill" wx:key="unique"/> -->
+  </view>
+  <view wx:if="{{visible3}}">
+    <video src="{{videoPath}}" controls></video>
+  </view>
+</view>
+<view class="tool-bar">
+  <image src="../../static/images/editpage/record.png" class="tool-bar-item" mode="aspectFit" bind:tap="startRecordFunc" />
+  <image src="../../static/images/editpage/photo.png" class="tool-bar-item" mode="aspectFit" bind:tap="photoFunc" />
+  <image src="../../static/images/editpage/vedio.png" class="tool-bar-item" mode="aspectFit" bind:tap="videoFunc" />
+  <image src="../../static/images/editpage/voice.png" class="tool-bar-item" mode="aspectFit" bind:tap="speechFunc" />
+</view>
+<i-toast id="toast" />

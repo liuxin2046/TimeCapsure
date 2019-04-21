@@ -1,0 +1,15 @@
+/* pages/friendpage/index.wxss */
+page {
+  background-color: #EFEFF4;
+}
+.topbar {
+    width: 100%;
+    height: 60px;
+    text-align: right;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.card-list {
+  height: 450px;
+  padding: 6px;
+}

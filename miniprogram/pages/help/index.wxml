@@ -1,0 +1,21 @@
+<view class="caption-wrap">
+  <text class="caption-title">帮助文档</text>
+  <i-collapse>
+    <i-collapse-item title="如何创建时光匣子" name="name1">
+      <view slot="content">
+        点击首页新建按钮，进入创建页面，填写活动主题，确认活动分类(活动的分类可以点击首页左上角，选择编辑进入活动的分类创建页面)，确认该内容模式的设置，选择隐私或公开，最后确定，完成胶囊的创建。
+      </view>
+    </i-collapse-item>
+    <i-collapse-item title="如何封存时光匣子" name="name2">
+      <view slot="content" i-class-content="green-text">
+        先选中您想要封存的匣子，进到匣子的图文列表页面，在右下角有个胶囊的按钮，点击后进入封存界面，选好封存的时间，和想要埋藏胶囊的地点，确定封存。
+      </view>
+    </i-collapse-item>
+    <i-collapse-item title="如何解封时光匣子" name="name3">
+      <view slot="content">
+        解封的条件：1.达到您埋藏匣子的时间节点；2.您正处于解封的地点；比如您之前设置一个胶囊的解封时间为2019年7月1日，地点为浙江省杭州市西湖区XXX。那么解封的条件为日期大于2019年7月1日，且您在浙江省杭州市西湖区境内。否则解封失败。
+      </view>
+    </i-collapse-item>
+  </i-collapse>
+</view>
+<i-button type="info" inline class="feedback-btn" open-type="feedback">欢迎留言</i-button>

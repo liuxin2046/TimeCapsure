@@ -1,0 +1,26 @@
+<!-- pages/storycont/index.wxml -->
+<view class="story">
+    <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin>
+    <!-- 录音文件 -->
+    <view class="record-file" wx:if="{{recordPath}}">
+        <audio poster="{{poster}}" name="{{name}}" src="{{recordPath}}" id="myAudio" controls></audio>
+    </view>
+    <!-- 文本内容 -->
+    <textarea class="words" wx:if="{{text}}" value="{{text}}" bindinput="handleInput" auto-height maxlength='-1' placeholder="{{placeholderText}}"></textarea>
+    <!-- 图片 -->
+    <view class='picture' wx:if="{{picPath}}">
+        <!-- <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin> -->
+        <image src="{{picPath}}" mode="aspectFill" wx:key="unique" />
+    </view>
+    <!-- 视频内容 -->
+    <view class="vedio" wx:if="{{vedioPath}}">
+        <video src="{{vedioPath}}" controls></video>
+    </view>
+    <!-- 留言区 -->
+    <view class="message-board">
+        <!-- 留言板 -->
+        <textarea class="my-input" placeholder="留下点什么吧!" bindinput="setMessage"></textarea>
+        <i-button type="info" inline size='25' bind:tap="submit">留言</i-button>
+    </view>
+</view>
+<i-message id="message" />

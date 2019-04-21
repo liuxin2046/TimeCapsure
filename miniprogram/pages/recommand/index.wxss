@@ -1,0 +1,13 @@
+page {
+  background-color: #EFEFF4;
+}
+.recommand {
+  width: 100%;
+  text-align: center;
+}
+.song-recommand, .vedio-recommand {
+  text-align: left;
+  padding: 5px 0 5px 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}

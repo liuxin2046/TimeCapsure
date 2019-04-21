@@ -1,0 +1,9 @@
+var filter = {
+    dateformat: function(value) {
+        var date = getDate(value)
+        return date.toLocaleString()
+    }
+}
+module.exports = {
+    dateFormat: filter.dateformat
+}

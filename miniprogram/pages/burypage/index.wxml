@@ -1,0 +1,15 @@
+<view class="burypage">
+    <image src="../../static/images/2014670158.jpg" alt="" mode="aspectFill" class="celebrate-img" />
+    <view class="my-options">
+        <view>设定解封时间</view>
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2050-01-01" bindchange="bindDateChange">
+            <view class="picker">当前选择: {{date}}</view>
+        </picker>
+        <view class="section__title">设定埋藏地点</view>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker">当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+        </picker>
+    </view>
+    <i-button type="info" inline class="bury-btn" bind:tap="handleBury">确定封存</i-button>
+</view>
+<i-toast id="toast" />

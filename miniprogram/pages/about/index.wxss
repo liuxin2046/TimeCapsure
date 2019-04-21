@@ -1,0 +1,13 @@
+.title {
+    text-align: center;
+    padding: 5px;
+}
+.content {
+    padding: 10px;
+    text-indent: 2em;
+}
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

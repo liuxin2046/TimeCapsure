@@ -1,0 +1,29 @@
+/* pages/storycont/index.wxss */
+page {
+    background-color: #EFEFF4;
+}
+.story {
+    min-height: 400px;
+}
+.record-file {
+    text-align: center;
+    padding: 6px;
+    background-color: #fff;
+}
+.vedio, .picture {
+    text-align: center
+}
+.words {
+    width: 95%;
+    margin: 10px auto 0;
+    background-color: #fff;
+}
+.my-input {
+    background-color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    margin: 0 auto;
+}
+.message-board {
+    padding: 15px;
+}

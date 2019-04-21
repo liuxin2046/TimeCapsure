@@ -1,0 +1,14 @@
+/* pages/friends/index.wxss */
+
+page {
+    background-color: #EFEFF4;
+}
+
+.nav, .friends-list {
+    padding: 2px 6px;
+}
+
+.friends-list {
+    /* height: ?450px; */
+    padding: 6px;
+}

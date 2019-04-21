@@ -1,0 +1,69 @@
+<wxs src="./filter.wxs" module="filter"></wxs>
+<!-- 顶部栏 -->
+<view class="topbar">
+  <i-icon type="other" size="45" color="#333" bindtap="toggleLeft1"/>
+  <text style="margin:0 10px 0 20px">{{boxtopic}}</text><i-icon type="unfold" size="35" color="#333" bindtap="handleOpen"/>
+  <i-button type="primary" inline i-class="my-create" bind:click="toNewTask">新建</i-button>
+</view>
+<!-- 文件分类窗口 -->
+<i-modal title="查看分类" visible="{{ visible }}" ok-text="编辑" cancel-text="取消" bind:ok="openEdit" bind:cancel="closeEdit">
+  <i-cell-group>
+    <i-cell wx:for="{{boxTypeList}}" title="{{item.topic}}" value="{{item.count}}" wx:key="unique" data-boxType="{{item._id}}" data-boxTopic="{{item.topic}}" bind:click="selectedType"></i-cell>
+  </i-cell-group>
+</i-modal>
+<!-- 确认解封胶囊 -->
+<i-modal title="解封胶囊" visible="{{ visible3 }}" actions="{{ actions }}" bind:click="handleClick">
+    <view class="present-time">解封时间: {{unsealingTime ? filter.dateFormat(unsealingTime) : 'loading...'}}</view>
+    <view class="current-location">解封地点: {{buriedPlace ? buriedPlace : 'loading...'}}</view>
+</i-modal>
+<i-message id="message" />
+<navigator class="my-search" url="../search/searchbar">
+  <i-icon type="search" size="30" color="#80848f"/>
+  <text>搜索</text>
+</navigator>
+<view class="my-content">
+  <i-tabs current="{{ current }}" bindchange="handleChange">
+    <i-tab key="tab1" title="进行中" count="{{boxesList.now.length}}"></i-tab>
+    <i-tab key="tab2" title="已埋藏" count="{{boxesList.sealup.length}}"></i-tab>
+    <i-tab key="tab3" title="已打开" count="{{boxesList.unsealup.length}}"></i-tab>
+  </i-tabs>
+  <view class="my-content-tabs">
+    <i-spin fix wx:if="{{isShow}}"></i-spin>
+  <!-- 九宫格 -->
+  <template name="tab1">
+    <i-grid i-class="my-grid">
+      <!-- 整改 -->
+      <view class="my-grid-item" wx:for="{{boxesList.now}}" wx:key="{{index}}" data-id="{{item._id}}" bindtap="toTimeAxis">
+        <image src="../../static/images/home/case.png" mode="aspectFit" class="my-grid-image"></image>
+        <text class="item-desc">{{item.topic}}</text>
+      </view>
+    </i-grid>
+  </template>
+  <template name="tab2">
+    <i-grid i-class="my-grid">
+      <view class="my-grid-item" wx:for="{{boxesList.sealup}}" wx:key="{{index}}" data-id="{{item._id}}" bindtap="toOpenBox">
+        <image src="../../static/images/home/hidden.png" mode="aspectFit" class="my-grid-image"></image>
+        <text class="item-desc">{{item.topic}}</text>
+      </view>
+    </i-grid>
+  </template>
+  <template name="tab3">
+    <i-grid i-class="my-grid">
+      <view class="my-grid-item" wx:for="{{boxesList.unsealup}}" wx:key="{{index}}" data-id="{{item._id}}" bindtap="toTimeAxis">
+        <image src="../../static/images/home/open.png" mode="aspectFit" class="my-grid-image"></image>
+        <text class="item-desc">{{item.topic}}</text>
+      </view>
+    </i-grid>
+  </template>
+  <template is="{{ current }}" data="{{boxesList}}"></template>
+  </view>
+</view>
+<i-drawer mode="left" visible="{{showLeft1}}" bind:close="toggleLeft1">
+  <view class="demo-container">
+    <i-asider src="{{avatarUrl}}" userName="{{nickName}}"></i-asider>
+  </view>
+</i-drawer>
+<!-- 遗留问题 -->
+<i-modal visible="{{ visible2 }}" bind:ok="handleOpen2" bind:cancel="handleClose2">
+    <view>尚未进行授权，部分功能将无法使用</view>
+</i-modal>

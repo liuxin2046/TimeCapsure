@@ -1,0 +1,13 @@
+<!-- pages/friendstory/index.wxml -->
+<view>
+    <!-- <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin> -->
+    <!-- 图文列表 -->
+    <view class="story-list">
+      <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin>
+      <block wx:for="{{storyList}}" wx:key="{{index}}">
+        <i-card title="{{item.topic}}" extra="查看" full thumb="{{item.picPath}}" data-id="{{item._id}}" bind:tap="storyCont">
+        <view slot="footer">{{item.text}}</view>        
+        </i-card>
+      </block>
+    </view>
+</view>

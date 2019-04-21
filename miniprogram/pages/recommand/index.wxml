@@ -1,0 +1,6 @@
+<view class="recommand">
+    <view class="song-recommand">歌曲推荐</view>
+    <audio poster="{{song.poster}}" name="{{song.name}}" author="{{song.author}}" src="{{song.src}}" controls loop></audio>
+    <view class="vedio-recommand">电影推荐</view>
+    <video id="myVideo" src="{{movies.src}}" title="{{movies.title}}" poster="{{movies.poster}}" controls></video>
+</view>

@@ -1,0 +1,14 @@
+<!-- pages/friendpage/index.wxml -->
+<view>
+  <view class="topbar" wx:if="{{!isFollow}}">
+    <i-button type="primary" inline bind:tap="follow">{{hasFollow ? '已关注':'关注'}}</i-button>
+  </view>
+  <!-- 图文列表 -->
+  <view class="card-list">
+    <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin>
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <i-card title="{{item.topic}}" extra="关注" full thumb="../../static/images/home/case.png" data-id="{{item._id}}" bind:tap="friendbox"></i-card>
+    </block>
+  </view>
+</view>
+<i-message id="message" />

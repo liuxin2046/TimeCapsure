@@ -1,0 +1,71 @@
+/* pages/index2/index.wxss */
+page {
+  background-color: #EFEFF4;
+}
+.my-menu image {
+  width: 40px;
+  height: 40px;
+}
+.demo-container {
+  background-color: #fff;
+  height: 100%;
+}
+.my-create {
+  float: right;
+}
+.topbar {
+  height: 60px;
+  line-height: 60px;
+  background-color: #fff;
+  /* border-bottom: 1px solid #ddd; */
+}
+.my-content {
+  /* width: 100%; */
+  /* height: 300px; */
+  padding: 10px;
+  /* background-color: lightcoral; */
+}
+.my-content-tabs {
+  height: 320px;
+  position: relative;
+}
+.my-search {
+  display: block;
+  width: 95%;
+  margin: 10px auto 0;
+  text-align: center;
+  background-color: #fff;
+  font-size: 14px;
+  color:#80848f;
+  /* border: 1px solid #ddd; */
+}
+.present-time, .current-location {
+  padding-left: 10px;
+}
+.my-grid {
+  margin-top: 10px;
+}
+
+.my-grid-item {
+  box-sizing: border-box;
+  width: 33.3333%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* padding: 20px 10px; */
+  background-color: #fff;
+  border-right: 2px solid #eee;
+  margin-bottom: 3px;
+  font-size: 14px;
+  color: #80848f
+}
+.my-grid-item:nth-child(3n) {
+  border-right: 0px;
+}
+.my-grid-image {
+  width: 100%;
+  height: 80px;
+  padding: 3px;
+}

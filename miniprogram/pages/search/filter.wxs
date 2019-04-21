@@ -1,0 +1,28 @@
+var filter = {
+    dateformat: function(value) {
+        var date = getDate(value)
+        return date.toLocaleString()
+    },
+    statusformat: function(value) {
+        var res= {imgSrc:'',text:''}
+        switch(value) {
+            case -1: 
+            res.text = '进行中';
+            res.imgSrc = 'case';
+            break;
+            case 0:
+            res.text = '已埋藏';
+            res.imgSrc = 'hidden';
+            break;
+            case 1:
+            res.text = '已打开';
+            res.imgSrc = 'open';
+            break;
+        }
+        return res
+    } 
+}
+module.exports = {
+    dateFormat: filter.dateformat,
+    statusFormat: filter.statusformat
+}

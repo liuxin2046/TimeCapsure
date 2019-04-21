@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "usingComponents":
+  {
+    "i-avatar": "../../components/avatar/index",
+    "i-button": "../../components/button/index",
+    "i-cell-group": "../../components/cell-group/index",
+    "i-cell": "../../components/cell/index",
+    "i-icon": "../../components/icon/index",
+    "i-badge": "../../components/badge/index"
+  }
+}

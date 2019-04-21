@@ -1,0 +1,21 @@
+  <i-panel title="创建新匣子">
+    <i-input value="{{ topic }}" type="text" title="主题" autofocus bind:change="theme" />
+    <i-input value="{{ category }}" type="text" title="分类" placeholder="请输入活动类别" bind:focus="setCategory" />
+    <!-- <i-select></i-select> -->
+    <i-input value="{{ address }}" type="textarea" title="详细地址" bind:change="setAddress"/>
+  </i-panel>
+  <i-panel title="内容设置">
+    <i-radio-group current="{{current}}" bindchange="handleChange">
+      <i-radio wx:for="{{status}}" position="right" wx:key="{{item.id}}" value="{{item.name}}">
+      </i-radio>
+    </i-radio-group>
+  </i-panel>
+  <i-button bind:click="submit" type="success">确定</i-button>
+  <i-button bind:click="reset" type="ghost">取消</i-button>
+  <i-toast id="toast" />
+  <!-- 显示分类文件夹 -->
+  <i-modal title="选择分类" visible="{{ visible }}" bind:ok="handleSuccess" bind:cancel="handleClose">
+    <i-cell-group>
+      <i-cell wx:for="{{boxTypeList}}" title="{{item.topic}}" wx:key="unique" data-boxType="{{item._id}}" data-boxTopic="{{item.topic}}" bind:click="selectedType"></i-cell>
+    </i-cell-group>
+  </i-modal>

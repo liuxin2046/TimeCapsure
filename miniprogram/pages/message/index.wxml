@@ -1,0 +1,36 @@
+<!-- pages/message/index.wxml -->
+<wxs src="./filter.wxs" module="filter"></wxs>
+<view>
+  <view class="nav">
+    <i-tabs current="{{ current }}" bindchange="handleChange">
+      <i-tab key="tab1" title="私信" count="{{messageList.privateList.length}}"></i-tab>
+      <i-tab key="tab2" title="评论" count="{{messageList.comment.length}}"></i-tab>
+    </i-tabs>
+  </view>
+  <!-- 消息列表 -->
+  <view class="message-list">
+    <scroll-view scroll-y style="height:430px">
+      <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin>
+      <!-- 私信 -->
+      <template name="tab1">
+        <block wx:for="{{messageList.privateList}}" wx:key="{{index}}">
+          <i-card title="{{item.nickName}}" full extra="{{filter.dateFormat(item.letters[0].startTime)}}" circle thumb="{{item.avatarUrl}}" wx:if="{{item.letters.length == 0 ? false : true}}" bind:tap="handleDefault">
+            <!-- <view slot="content">{{item.value}}</view> -->
+            <view slot="footer">新建主题 {{item.letters[0].topic}}</view>
+          </i-card>
+        </block>
+      </template>
+      <!-- 评论 -->
+      <template name="tab2">
+        <block wx:for="{{messageList.comment}}" wx:key="{{index}}">
+          <i-card title="{{item.nickName}}" full extra="{{filter.dateFormat(item.createTime)}}" circle thumb="{{item.avatarUrl}}">
+            <view slot="content">{{item.value}}</view>
+            <view slot="footer">来自你发的 {{item.topic}} 主题</view>
+          </i-card>
+        </block>
+      </template>
+      <template is="{{ current }}" data="{{messageList}}"></template>
+    </scroll-view>
+  </view>
+</view>
+<i-message id="message" />

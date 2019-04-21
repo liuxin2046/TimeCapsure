@@ -1,0 +1,4 @@
+<view class="my-start" wx:if="{{isShow}}">
+  <image src="../../static/images/startImg.jpg" class="start-image" mode="aspectFill"/>
+  <i-button type="info" inline class="start-btn" open-type="getUserInfo"  bind:getuserinfo="bindGetUserInfo" bind:tap="linkIndex">开始体验</i-button>
+</view>

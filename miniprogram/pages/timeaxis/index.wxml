@@ -1,0 +1,19 @@
+<!-- pages/timeaxis/index.wxml -->
+<wxs src="./filter.wxs" module="filter"></wxs>
+<scroll-view scroll-y class="my-timeaxis">
+  <view class="my-list">
+    <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin>
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <i-card extra="记录{{index + 1}}" full thumb="{{item.picPath ? item.picPath: defaultImg }}" data-id="{{item._id}}" bind:tap="toEditPage">
+        <view slot="content">{{item.text}}</view>
+        <view slot="footer">{{filter.dateFormat(item.time)}}</view>
+      </i-card>
+    </block>
+  </view>
+</scroll-view>
+<view class="bottom">
+  <image src="../../static/images/delete.png" class="my-image" bind:tap="deleteBox"/>
+  <image src="../../static/images/add2.png" class="my-image" data-id="" bind:tap="toEditPage"/>
+  <image src="../../static/images/bury.png" class="my-image" bind:tap="toBuryPage"/>
+</view>
+<i-toast id="toast" />

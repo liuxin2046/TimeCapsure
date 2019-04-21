@@ -1,0 +1,12 @@
+/* pages/message/index.wxss */
+page {
+    background-color: #EFEFF4;
+}
+
+.nav, .message-list {
+    padding: 2px 6px;
+}
+
+.message-list {
+    padding: 6px;
+}

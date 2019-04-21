@@ -1,0 +1,8 @@
+/* pages/friendstory/index.wxss */
+page {
+    background-color: #EFEFF4;
+}
+.story-list {
+    height: 450px;
+    padding: 6px;
+}

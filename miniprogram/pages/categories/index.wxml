@@ -1,0 +1,38 @@
+<view class="top-bar">
+  <text>所有分类</text>
+  <image src="../../static/images/add.png" mode="aspectFit" class="add-file" bind:tap="addFile"/>
+</view>
+<scroll-view scroll-y class="i-swipeout-demo">
+    <i-spin fix wx:if="{{isShow}}"></i-spin>
+  <i-action-sheet visible="{{ visible2 }}" actions="{{ actions2 }}" show-cancel bind:cancel="handleCancel2" bind:click="handleClickItem2" mask-closable="{{ false }}">
+    <view slot="header" style="padding: 16px">
+      <view style="color: #444;font-size: 16px">确定吗？</view>
+      <text>删除后无法恢复哦</text>
+    </view>
+  </i-action-sheet>
+  <block wx:for="{{categoryList}}" wx:key="index">
+    <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}" bind:change="option" toggle="{{toggle}}" data-id="{{index}}">
+      <view slot="content">
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-h2">{{item.topic}}</view>
+          <view class="i-swipeout-des-detail">{{item.count}}条笔记</view>
+        </view>
+      </view>
+    </i-swipeout>
+  </block>
+</scroll-view>
+<!-- 显示新建分类 -->
+<!-- 文件分类窗口 -->
+<i-modal title="新建分类" visible="{{ visible }}" ok-text="好" cancel-text="取消" bind:ok="created" bind:cancel="throw">
+  <view>
+    <i-input placeholder="请输入新的分类" bind:change="setFileName"/>
+  </view>
+</i-modal>
+<!-- 重命名活动类别 -->
+<i-modal title="更新分类" visible="{{ visible3 }}" ok-text="好" cancel-text="取消" bind:ok="update" bind:cancel="throw">
+  <view>
+    <i-input value="{{fileName}}" bind:change="setNewName"/>
+  </view>
+</i-modal>
+<!-- 全局提醒 -->
+<i-message id="message" />

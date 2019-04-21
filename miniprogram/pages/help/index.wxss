@@ -1,0 +1,9 @@
+.caption-title {
+    padding-left: 15px;
+}
+.feedback-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}

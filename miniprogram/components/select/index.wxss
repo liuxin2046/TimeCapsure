@@ -1,0 +1,37 @@
+.i-select-container {
+  width: 100%;
+  position: relative;
+  font-size: 14px;
+}
+.i-select-input {
+  width: 100%;
+  /* height: 35px; */
+  line-height: 35px;
+}
+.i-select-title {
+  margin-left: 15px;
+  height: inherit;
+  display: inline-block;
+}
+.i-select-content {
+  width: 80%;
+  height: inherit;
+  display: inline-block;
+  border-bottom: 1px solid #ddd;
+}
+.i-select-option {
+  /* width: 200px; */
+  padding-left: 20px;
+  height: 50px;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+}
+.i-select-item {
+  width: 100%;
+  height: 22px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+}

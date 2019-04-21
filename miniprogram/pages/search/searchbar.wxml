@@ -1,0 +1,32 @@
+<wxs src="./filter.wxs" module="filter"></wxs>
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">
+        取消
+      </view>
+    </view>
+  </view>
+  <!-- 图文列表 -->
+  <view class="search-list">
+    <block wx:for="{{boxesList}}" wx:key="{{index}}">
+      <i-card title="{{item.topic}}" extra="记录{{index+1}}" full circle thumb="../../static/images/home/{{filter.statusFormat(item.status).imgSrc}}.png" data-id="{{item._id}}" class="gap" bind:tap="toTimeAxis">
+        <view slot="content">{{filter.statusFormat(item.status).text}}</view>
+        <view slot="footer">{{filter.dateFormat(item.startTime)}}</view>
+      </i-card>
+    </block>
+  </view>
+</view>

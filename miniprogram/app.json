@@ -1,0 +1,34 @@
+{
+    "pages": [
+        "pages/start/index",
+        "pages/index/index",
+        "pages/newtask/index",
+        "pages/search/searchbar",
+        "pages/categories/index",
+        "pages/editpage/index",
+        "pages/timeaxis/index",
+        "pages/help/index",
+        "pages/about/index",
+        "pages/recommand/index",
+        "pages/burypage/index",
+        "pages/friends/index",
+        "pages/friendpage/index",
+        "pages/friendstory/index",
+        "pages/storycont/index",
+        "pages/message/index"
+    ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于获取匣子埋藏地点"
+        }
+    },
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "时光 Remember",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true
+    },
+    "sitemapLocation": "sitemap.json"
+}

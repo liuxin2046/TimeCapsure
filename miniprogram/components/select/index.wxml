@@ -1,0 +1,21 @@
+<view class="i-select-container">
+  <view class="i-select-input" bind:tap="selectItem">
+    <view class="i-select-title">{{title}}</view>
+    <view class="i-select-content">分类</view>
+    <i-icon type="unfold" />
+  </view>
+  <scroll-view scroll-y class="i-select-option">
+    <view class="i-select-item">
+      11111
+    </view>
+    <view class="i-select-item">
+      22222
+    </view>
+    <view class="i-select-item">
+      33333
+    </view>
+    <view class="i-select-item">
+      44444
+    </view>
+  </scroll-view>
+</view>
