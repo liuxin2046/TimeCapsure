@@ -3,7 +3,7 @@
 <view>
   <view class="nav">
     <i-tabs current="{{ current }}" bindchange="handleChange">
-      <i-tab key="tab1" title="私信" count="{{messageList.privateList.length}}"></i-tab>
+      <i-tab key="tab1" title="私信" count="{{nums}}"></i-tab>
       <i-tab key="tab2" title="评论" count="{{messageList.comment.length}}"></i-tab>
     </i-tabs>
   </view>
@@ -13,10 +13,9 @@
       <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin>
       <!-- 私信 -->
       <template name="tab1">
-        <block wx:for="{{messageList.privateList}}" wx:key="{{index}}">
-          <i-card title="{{item.nickName}}" full extra="{{filter.dateFormat(item.letters[0].startTime)}}" circle thumb="{{item.avatarUrl}}" wx:if="{{item.letters.length == 0 ? false : true}}" bind:tap="handleDefault">
-            <!-- <view slot="content">{{item.value}}</view> -->
-            <view slot="footer">新建主题 {{item.letters[0].topic}}</view>
+        <block wx:for="{{messageList.privateList}}" wx:key="{{index}}" wx:for-item="first">
+          <i-card wx:for="{{first.letters}}" wx:key="{{index}}" title="{{item.nickName}}" full extra="{{filter.dateFormat(item.startTime)}}" circle thumb="{{first.avatarUrl}}" bind:tap="handleDefault">
+            <view slot="footer">新建主题 {{item.topic}}</view>
           </i-card>
         </block>
       </template>

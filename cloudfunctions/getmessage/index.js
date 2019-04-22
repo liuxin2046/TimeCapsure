@@ -25,6 +25,7 @@ exports.main = async (event, context) => {
   const db = cloud.database({
     env: 'blue-bdd889'
   })
+  const _ = db.command
   // 通过openId查询消息
   const res = await db.collection('message').where({
     userId: wxContext.OPENID
@@ -57,7 +58,9 @@ exports.main = async (event, context) => {
     const followTime = followIds[i].followTime
     // 朋友创建的时光胶囊
     const friendBoxes = await db.collection('boxes').where({
-      _openid: followIds[i].followId
+      _openid: followIds[i].followId,
+      mode: false,
+      status: _.neq(0)
     }).orderBy('time', 'desc').get()
     // 筛选出朋友最新的发布的主题
     const boxes = friendBoxes.data

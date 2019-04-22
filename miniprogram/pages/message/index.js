@@ -3,10 +3,11 @@ Page({
   data: {
     current: 'tab1',
     messageList: {},
-    isShow: true
+    isShow: true,
+    nums: 0
   },
   onLoad() {
-    let _this = this
+    // let _this = this
     // 获取当前的消息列表
     wx.cloud.callFunction({
       name: 'getmessage'
@@ -16,19 +17,25 @@ Page({
       console.log('Private list: ', followIds)
       // Private letter 私信
       const temp = Object.assign({}, { comment: data, privateList: followIds })
-      _this.setData({
+      // 统计私信的数量
+      let nums = this.count(followIds)
+      this.setData({
         isShow: false,
-        messageList: temp
+        messageList: temp,
+        nums
+      },()=>{
+        console.log('nums: ',this.data.nums)
       })
     })
-    // wx.cloud.callFunction({
-    //     name: 'getbox',
-    //     data: {
-    //         boxId: 'XIjz72FYXKhhnnW0'
-    //     }
-    // }).then(res => {
-    //     console.log('test.... ',res)
-    // })
+  },
+  count (arr) {
+    let nums = 0
+    for (let i=0;i<arr.length;i++) {
+      for (let j=0;j<arr[i].letters.length;j++){
+        nums++
+      }
+    }
+    return nums
   },
   handleChange({ detail }) {
     this.setData({
