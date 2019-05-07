@@ -1,7 +1,7 @@
 const { $Message } = require('../../components/base/index');
 Page({
     data: {
-        poster: 'https://i.loli.net/2017/08/21/599a521472424.jpg',
+        poster: '../../static/images/editpage/recond_logo.png',
         recordPath: '',
         id: '',
         userId: '', //作者的id

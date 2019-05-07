@@ -14,8 +14,8 @@ page {
     text-align: center
 }
 .words {
-    width: 95%;
-    margin: 10px auto 0;
+    padding: 15px;
+    margin: 10px auto;
     background-color: #fff;
 }
 .my-input {

@@ -60,7 +60,7 @@ Page({
         topic: '全部'
       }
     }).then(res => {
-      console.log(res)
+      // console.log(res)
     }).catch(res => {
       console.error
     })
