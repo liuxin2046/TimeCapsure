@@ -26,7 +26,7 @@
         "backgroundColor": "#F6F6F6",
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#F6F6F6",
-        "navigationBarTitleText": "时光 Remember",
+        "navigationBarTitleText": "时光胶囊",
         "navigationBarTextStyle": "black",
         "enablePullDownRefresh": true
     },

@@ -35,6 +35,9 @@ Component({
             console.log(res.authSetting)
           }
         })
+      },
+      exit() {
+        console.log('exit')
       }
   }
 });

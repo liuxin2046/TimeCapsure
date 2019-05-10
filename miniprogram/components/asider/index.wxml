@@ -20,8 +20,9 @@
       </i-cell>
       <i-cell title="我的好友" is-link url="../../pages/friends/index"><i-icon type="group" slot="icon" size="28"/><i-badge slot="footer"/></i-cell>
       <i-cell title="智能推荐" is-link url="../../pages/recommand/index"><i-icon type="praise" slot="icon" size="28"/></i-cell>
-      <i-cell title="通用设置" bind:tap="options"><i-icon type="setup" slot="icon" size="28"/></i-cell>
+      <i-cell title="通用设置" is-link bind:tap="options"><i-icon type="setup" slot="icon" size="28"/></i-cell>
       <i-cell title="帮助与反馈" is-link url="../../pages/help/index"><i-icon type="feedback" slot="icon" size="28"/></i-cell>
-      <i-cell title="关于Remember" is-link url='../../pages/about/index'><i-icon type="prompt" slot="icon" size="28"/></i-cell>
+      <i-cell title="关于时光胶囊" is-link url='../../pages/about/index'><i-icon type="prompt" slot="icon" size="28"/></i-cell>
+      <i-cell title="退出账户" bind:tap="exit"><i-icon type="offline" slot="icon" size="28"/></i-cell>
     </i-cell-group>
 </view>
