@@ -123,8 +123,8 @@ Page({
             mapp.globalData.userPosition = address
             _this.setData({
               // address: mapp.globalData.userPosition,
-              // matchAddress: province + city + district
-              matchAddress: '江西省宜春市宜丰县'
+              matchAddress: province + city + district
+              // matchAddress: '江西省宜春市宜丰县'
             })
           },
           fail: res => {
@@ -248,6 +248,7 @@ Page({
       console.log('unsealingTime',unsealingTime)
 
       const now = new Date().getTime()
+      console.log('now',now)
       const unsealTime = new Date(unsealingTime).getTime()
       if (_this.checkTime(unsealTime, now) && _this.checkAddress(buriedPlace, matchAddress)) {
         // console.log('ok')
