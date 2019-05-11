@@ -30,7 +30,7 @@
   </textarea>
   <view class='picture'>
     <i-spin fix wx:if="{{isShow}}" class="my-spin"></i-spin>
-    <image src="{{picPath}}" mode="aspectFill"/>
+    <image src="{{picPath}}" mode="aspectFit"/>
   <!-- <text>fileID</text> -->
     <!-- <image src="{{fileId}}" mode="aspectFill" wx:key="unique"/> -->
   </view>
