@@ -7,11 +7,12 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"appid": "wx3e44cbb59a3a3d24",
 	"projectname": "TimeCapsure",
-	"libVersion": "2.6.2",
+	"libVersion": "2.6.6",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
